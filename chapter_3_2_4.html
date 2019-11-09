@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>peach-oled - PeachCloud: Developer Documentation</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Hardware</a></li><li><ol class="section"><li class="expanded "><a href="chapter_2_1.html"><strong aria-hidden="true">2.1.</strong> Requirements</a></li><li class="expanded "><a href="chapter_2_2.html"><strong aria-hidden="true">2.2.</strong> GPIO Pinout</a></li><li class="expanded "><a href="chapter_2_3.html"><strong aria-hidden="true">2.3.</strong> Physical Interface</a></li></ol></li><li class="expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> Software</a></li><li><ol class="section"><li class="expanded "><a href="chapter_3_1.html"><strong aria-hidden="true">3.1.</strong> Operating System</a></li><li><ol class="section"><li class="expanded "><a href="chapter_3_1_1.html"><strong aria-hidden="true">3.1.1.</strong> Networking</a></li></ol></li><li class="expanded "><a href="chapter_3_2.html"><strong aria-hidden="true">3.2.</strong> Microservices</a></li><li><ol class="section"><li class="expanded "><a href="chapter_3_2_1.html"><strong aria-hidden="true">3.2.1.</strong> peach-buttons</a></li><li class="expanded "><a href="chapter_3_2_2.html"><strong aria-hidden="true">3.2.2.</strong> peach-menu</a></li><li class="expanded "><a href="chapter_3_2_3.html"><strong aria-hidden="true">3.2.3.</strong> peach-network</a></li><li class="expanded "><a href="chapter_3_2_4.html" class="active"><strong aria-hidden="true">3.2.4.</strong> peach-oled</a></li><li class="expanded "><a href="chapter_3_2_5.html"><strong aria-hidden="true">3.2.5.</strong> peach-stats</a></li></ol></li><li class="expanded "><a href="chapter_3_3.html"><strong aria-hidden="true">3.3.</strong> Web Interface</a></li><li class="expanded "><a href="chapter_3_4.html"><strong aria-hidden="true">3.4.</strong> Configuration</a></li></ol></li><li class="expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Contributor's Guide</a></li><li class="expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> Licensing</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">PeachCloud: Developer Documentation</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#peach-oled" id="peach-oled">peach-oled</a></h1>
+<p><a href="https://travis-ci.com/peachcloud/peach-oled"><img src="https://travis-ci.com/peachcloud/peach-oled.svg?branch=master" alt="Build Status" /></a></p>
+<p>OLED microservice module for PeachCloud. Write to a 128x64 OLED display with SDD1306 driver (I2C) using <a href="https://www.jsonrpc.org/specification">JSON-RPC</a> over HTTP.</p>
+<h3><a class="header" href="#json-rpc-api" id="json-rpc-api">JSON-RPC API</a></h3>
+<table><thead><tr><th>Method</th><th>Parameters</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>clear</code></td><td></td><td>Clear the display buffer</td></tr>
+<tr><td><code>draw</code></td><td><code>bytes</code>, <code>width</code>, <code>height</code>, <code>x_coord</code>, <code>y_coord</code></td><td>Draw graphic to display buffer for given byte array, dimensions and co-ordinates</td></tr>
+<tr><td><code>flush</code></td><td></td><td>Flush the display</td></tr>
+<tr><td><code>ping</code></td><td></td><td>Respond with <code>success</code> if microservice is running</td></tr>
+<tr><td><code>write</code></td><td><code>x_coord</code>, <code>y_coord</code>, <code>string</code>, <code>font_size</code></td><td>Write message to display buffer for given co-ordinates using given font size</td></tr>
+</tbody></table>
+<p><code>peach-oled</code> allows text to be written with the following font sizes:</p>
+<table><thead><tr><th>Font Sizes</th></tr></thead><tbody>
+<tr><td><code>6x8</code></td></tr>
+<tr><td><code>6x12</code></td></tr>
+<tr><td><code>8x16</code></td></tr>
+<tr><td><code>12x16</code></td></tr>
+</tbody></table>
+<h3><a class="header" href="#directory-tree" id="directory-tree">Directory Tree</a></h3>
+<pre><code>.
+├── Cargo.lock
+├── Cargo.toml
+├── docs
+│   └── images
+│       └── peachcloud_oled.jpg
+├── README.md
+├── src
+│   ├── error.rs        // custom OledError type &amp; From implementations
+│   ├── lib.rs          // RPC server, methods &amp; tests (includes OLED logic)
+│   └── main.rs         // init logger, call run() &amp; catch application errors
+</code></pre>
+<h3><a class="header" href="#setup" id="setup">Setup</a></h3>
+<p>Clone this repo:</p>
+<p><code>git clone https://github.com/peachcloud/peach-oled.git</code></p>
+<p>Move into the repo and compile:</p>
+<p><code>cd peach-oled</code><br />
+<code>cargo build --release</code></p>
+<p>Run the binary:</p>
+<p><code>./target/release/peach-oled</code></p>
+<h3><a class="header" href="#environment" id="environment">Environment</a></h3>
+<p>The JSON-RPC HTTP server address and port can be configured with the <code>PEACH_OLED_SERVER</code> environment variable:</p>
+<p><code>export PEACH_OLED_SERVER=127.0.0.1:5000</code></p>
+<p>When not set, the value defaults to <code>127.0.0.1:5112</code>.</p>
+<p>Logging is made available with <code>env_logger</code>:</p>
+<p><code>export RUST_LOG=info</code></p>
+<p>Other logging levels include <code>debug</code>, <code>warn</code> and <code>error</code>.</p>
+<h3><a class="header" href="#example-usage" id="example-usage">Example Usage</a></h3>
+<p><strong>Write Text to the OLED Display</strong></p>
+<p>With microservice running, open a second terminal window and use <code>curl</code> to call server methods:</p>
+<p><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;write&quot;, &quot;params&quot; : {&quot;x_coord&quot;: 0, &quot;y_coord&quot;: 0, &quot;string&quot;: &quot;Welcome to PeachCloud&quot;, &quot;font_size&quot;: &quot;6x8&quot; }, &quot;id&quot;:1 }' 127.0.0.1:5112</code></p>
+<p>Server responds with:</p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:success&quot;,&quot;id&quot;:1}</code></p>
+<p>OLED will remain blank because no flush command has been issued.</p>
+<p>Write to the second line of the display:</p>
+<p><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;write&quot;, &quot;params&quot; : {&quot;x_coord&quot;: 0, &quot;y_coord&quot;: 8, &quot;string&quot;: &quot;Born in cypherspace&quot;, &quot;font_size&quot;: &quot;6x12&quot; }, &quot;id&quot;:1 }' 127.0.0.1:5112</code></p>
+<p>Flush the display:</p>
+<p><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;flush&quot;, &quot;id&quot;:1 }' 127.0.0.1:5112</code></p>
+<p>OLED display shows:</p>
+<p><code>Welcome to PeachCloud!</code><br />
+<code>Born in cypherspace</code></p>
+<p>Validation checks are performed for all three parameters: <code>x_coord</code>, <code>y_coord</code> and <code>string</code>. An appropriate error is returned if the validation checks are not satisfied:</p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;error&quot;:{&quot;code&quot;:1,&quot;message&quot;:&quot;Validation error: coordinate x out of range 0-128: 129.&quot;},&quot;id&quot;:1}</code></p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;error&quot;:{&quot;code&quot;:1,&quot;message&quot;:&quot;validation error&quot;,&quot;data&quot;:&quot;y_coord not in range 0-57&quot;},&quot;id&quot;:1}</code></p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;error&quot;:{&quot;code&quot;:1,&quot;message&quot;:&quot;Validation error: string length 47 out of range 0-21.&quot;},&quot;id&quot;:1}</code></p>
+<p>An error is returned if one or all of the expected parameters are not supplied:</p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;error&quot;:{&quot;code&quot;:-32602,&quot;message&quot;:&quot;Invalid params: missing field </code>font_size<code>.&quot;},&quot;id&quot;:1}</code></p>
+<hr />
+<p><strong>Draw Graphic to the OLED Display</strong></p>
+<p>With microservice running, open a second terminal window and use <code>curl</code> to call server methods:</p>
+<p><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;draw&quot;, &quot;params&quot; : {&quot;bytes&quot;: [30, 0, 33, 0, 64, 128, 128, 64, 140, 64, 140, 64, 128, 64, 64, 128, 33, 0, 30, 0], &quot;width&quot;: 10, &quot;height&quot;: 10, &quot;x_coord&quot;: 32, &quot;y_coord&quot;: 32}, &quot;id&quot;:1 }' 127.0.0.1:5112</code></p>
+<p>Server responds with:</p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:success&quot;,&quot;id&quot;:1}</code></p>
+<p>OLED will remain blank because no flush command has been issued.</p>
+<p>Flush the display:</p>
+<p><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;flush&quot;, &quot;id&quot;:1 }' 127.0.0.1:5112</code></p>
+<p>OLED display shows a 10x10 graphic of a dot inside a circle.</p>
+<p>No validation checks are currently performed on the parameters of the <code>draw</code> RPC, aside from type-checks when the parameters are parsed.</p>
+<hr />
+<p><strong>Clear the Display</strong></p>
+<p><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;clear&quot;, &quot;id&quot;:1 }' 127.0.0.1:5112</code></p>
+<p>Server responds with:</p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2,0&quot;,&quot;result&quot;:&quot;success&quot;,&quot;id&quot;:1}</code></p>
+<h3><a class="header" href="#licensing" id="licensing">Licensing</a></h3>
+<p>AGPL-3.0</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="chapter_3_2_3.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="chapter_3_2_5.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="chapter_3_2_3.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="chapter_3_2_5.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

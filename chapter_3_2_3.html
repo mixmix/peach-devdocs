@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>peach-network - PeachCloud: Developer Documentation</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Hardware</a></li><li><ol class="section"><li class="expanded "><a href="chapter_2_1.html"><strong aria-hidden="true">2.1.</strong> Requirements</a></li><li class="expanded "><a href="chapter_2_2.html"><strong aria-hidden="true">2.2.</strong> GPIO Pinout</a></li><li class="expanded "><a href="chapter_2_3.html"><strong aria-hidden="true">2.3.</strong> Physical Interface</a></li></ol></li><li class="expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> Software</a></li><li><ol class="section"><li class="expanded "><a href="chapter_3_1.html"><strong aria-hidden="true">3.1.</strong> Operating System</a></li><li><ol class="section"><li class="expanded "><a href="chapter_3_1_1.html"><strong aria-hidden="true">3.1.1.</strong> Networking</a></li></ol></li><li class="expanded "><a href="chapter_3_2.html"><strong aria-hidden="true">3.2.</strong> Microservices</a></li><li><ol class="section"><li class="expanded "><a href="chapter_3_2_1.html"><strong aria-hidden="true">3.2.1.</strong> peach-buttons</a></li><li class="expanded "><a href="chapter_3_2_2.html"><strong aria-hidden="true">3.2.2.</strong> peach-menu</a></li><li class="expanded "><a href="chapter_3_2_3.html" class="active"><strong aria-hidden="true">3.2.3.</strong> peach-network</a></li><li class="expanded "><a href="chapter_3_2_4.html"><strong aria-hidden="true">3.2.4.</strong> peach-oled</a></li><li class="expanded "><a href="chapter_3_2_5.html"><strong aria-hidden="true">3.2.5.</strong> peach-stats</a></li></ol></li><li class="expanded "><a href="chapter_3_3.html"><strong aria-hidden="true">3.3.</strong> Web Interface</a></li><li class="expanded "><a href="chapter_3_4.html"><strong aria-hidden="true">3.4.</strong> Configuration</a></li></ol></li><li class="expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Contributor's Guide</a></li><li class="expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> Licensing</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">PeachCloud: Developer Documentation</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#peach-network" id="peach-network">peach-network</a></h1>
+<p><a href="https://travis-ci.com/peachcloud/peach-network"><img src="https://travis-ci.com/peachcloud/peach-network.svg?branch=master" alt="Build Status" /></a></p>
+<p>Networking microservice module for PeachCloud. Query and configure device interfaces using <a href="https://www.jsonrpc.org/specification">JSON-RPC</a> over HTTP.</p>
+<p>Interaction with wireless interfaces occurs primarily through the <a href="https://docs.rs/wpactrl/0.3.1/wpactrl/">wpactrl crate</a> which provides &quot;a pure-Rust lowlevel library for controlling wpasupplicant remotely&quot;. This approach is akin to using <code>wpa_cli</code> (a WPA command line client).</p>
+<p><em>Note: This module is a work-in-progress.</em></p>
+<h3><a class="header" href="#json-rpc-api" id="json-rpc-api">JSON-RPC API</a></h3>
+<table><thead><tr><th>Method</th><th>Parameters</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>activate_ap</code></td><td></td><td>Activate WiFi access point (stop <code>wpa_supplicant</code> and start <code>hostapd</code> and <code>dnsmasq</code>)</td></tr>
+<tr><td><code>activate_client</code></td><td></td><td>Activate WiFi client connection (stop <code>hostapd</code> and <code>dnsmasq</code> and start <code>wpa_supplicant</code>)</td></tr>
+<tr><td><code>add_wifi</code></td><td><code>ssid</code>, <code>pass</code></td><td>Connect to WiFi with given SSID and password</td></tr>
+<tr><td><code>get_ip</code></td><td><code>iface</code></td><td>Return IP of given network interface</td></tr>
+<tr><td><code>get_rssi</code></td><td><code>iface</code></td><td>Return average signal strength for given interface</td></tr>
+<tr><td><code>get_ssid</code></td><td><code>iface</code></td><td>Return SSID of currently-connected network for given interface</td></tr>
+<tr><td><code>get_state</code></td><td><code>iface</code></td><td>Return state of given interface</td></tr>
+<tr><td><code>get_traffic</code></td><td><code>iface</code></td><td>Return network traffic for given interface</td></tr>
+<tr><td><code>if_checker</code></td><td></td><td>Run AP / client-mode configuration script</td></tr>
+<tr><td><code>list_networks</code></td><td></td><td>List all networks saved in wpasupplicant config</td></tr>
+<tr><td><code>ping</code></td><td></td><td>Respond with <code>success</code> if microservice is running</td></tr>
+<tr><td><code>scan_networks</code></td><td><code>iface</code></td><td>List all networks in range of given interface</td></tr>
+<tr><td><code>reconnect_wifi</code></td><td><code>iface</code></td><td>Disconnect and reconnect given interface</td></tr>
+<tr><td><code>reassociate_wifi</code></td><td><code>iface</code></td><td>Reassociate with current AP for given interface</td></tr>
+</tbody></table>
+<h3><a class="header" href="#directory-tree" id="directory-tree">Directory Tree</a></h3>
+<pre><code>.
+├── Cargo.lock
+├── Cargo.toml
+├── README.md
+├── src
+│   ├── error.rs        // custom NetworkError type &amp; From implementations
+│   ├── lib.rs          // RPC server, methods &amp; tests
+│   ├── main.rs         // init logger, call run() &amp; catch application errors
+│   └── network.rs      // logic for network methods exposed via RPC
+</code></pre>
+<h3><a class="header" href="#setup" id="setup">Setup</a></h3>
+<p>Clone this repo:</p>
+<p><code>git clone https://github.com/peachcloud/peach-network.git</code></p>
+<p>Move into the repo and compile:</p>
+<p><code>cd peach-network</code><br />
+<code>cargo build --release</code></p>
+<p>Run the binary (sudo needed to satisfy permission requirements):</p>
+<p><code>sudo ./target/release/peach-network</code></p>
+<h3><a class="header" href="#environment" id="environment">Environment</a></h3>
+<p>The JSON-RPC HTTP server address and port can be configured with the <code>PEACH_NETWORK_SERVER</code> environment variable:</p>
+<p><code>export PEACH_NETWORK_SERVER=127.0.0.1:5000</code></p>
+<p>When not set, the value defaults to <code>127.0.0.1:5110</code>.</p>
+<p>Logging is made available with <code>env_logger</code>:</p>
+<p><code>export RUST_LOG=info</code></p>
+<p>Other logging levels include <code>debug</code>, <code>warn</code> and <code>error</code>.</p>
+<h3><a class="header" href="#example-usage" id="example-usage">Example Usage</a></h3>
+<p><strong>Retrieve IP address for wlan0</strong></p>
+<p>With microservice running, open a second terminal window and use <code>curl</code> to call server methods:</p>
+<p><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;get_ip&quot;, &quot;params&quot; : {&quot;iface&quot;: &quot;wlan0&quot; }, &quot;id&quot;:1 }' 127.0.0.1:5000</code></p>
+<p>Server responds with:</p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;192.168.1.21&quot;,&quot;id&quot;:1}</code></p>
+<p><strong>Retrieve SSID of connected access point for wlan1</strong></p>
+<p><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;get_ssid&quot;, &quot;params&quot; : {&quot;iface&quot;: &quot;wlan1&quot; }, &quot;id&quot;:1 }' 127.0.0.1:5000</code></p>
+<p>Server response when interface is connected:</p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;Home&quot;,&quot;id&quot;:1}</code></p>
+<p>Server response when interface is not connected:</p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;error&quot;:{&quot;code&quot;:-32003,&quot;message&quot;:&quot;Failed to retrieve SSID for wlan1. Interface may not be connected.&quot;},&quot;id&quot;:1}</code></p>
+<p><strong>Retrieve list of SSIDs for all networks in range of wlan0</strong></p>
+<p><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;scan_networks&quot;, &quot;params&quot; : {&quot;iface&quot;: &quot;wlan0&quot; }, &quot;id&quot;:1 }' 127.0.0.1:5000</code></p>
+<p>Server response when interface is connected:</p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;[\&quot;Home\&quot;,\&quot;TP-LINK_254700\&quot;]&quot;,&quot;id&quot;:1}</code></p>
+<p>Server response when interface is not connected:</p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;error&quot;:{&quot;code&quot;:-32006,&quot;message&quot;:&quot;No networks found in range of wlan0&quot;},&quot;id&quot;:1}</code></p>
+<p><strong>Retrieve network traffic statistics for wlan1</strong></p>
+<p><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;get_traffic&quot;, &quot;params&quot; : {&quot;iface&quot;: &quot;wlan1&quot; }, &quot;id&quot;:1 }' 127.0.0.1:5000</code></p>
+<p>Server response if interface exists:</p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;{\&quot;received\&quot;:26396361,\&quot;transmitted\&quot;:22352530}&quot;,&quot;id&quot;:1}</code></p>
+<p>Server response when interface is not found:</p>
+<p><code>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;error&quot;:{&quot;code&quot;:-32004,&quot;message&quot;:&quot;Failed to retrieve network traffic for wlan3. Interface may not be connected&quot;},&quot;id&quot;:1}</code></p>
+<h3><a class="header" href="#licensing" id="licensing">Licensing</a></h3>
+<p>AGPL-3.0</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="chapter_3_2_2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="chapter_3_2_4.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="chapter_3_2_2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="chapter_3_2_4.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

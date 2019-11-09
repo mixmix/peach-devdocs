@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>peach-menu - PeachCloud: Developer Documentation</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> Hardware</a></li><li><ol class="section"><li class="expanded "><a href="chapter_2_1.html"><strong aria-hidden="true">2.1.</strong> Requirements</a></li><li class="expanded "><a href="chapter_2_2.html"><strong aria-hidden="true">2.2.</strong> GPIO Pinout</a></li><li class="expanded "><a href="chapter_2_3.html"><strong aria-hidden="true">2.3.</strong> Physical Interface</a></li></ol></li><li class="expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> Software</a></li><li><ol class="section"><li class="expanded "><a href="chapter_3_1.html"><strong aria-hidden="true">3.1.</strong> Operating System</a></li><li><ol class="section"><li class="expanded "><a href="chapter_3_1_1.html"><strong aria-hidden="true">3.1.1.</strong> Networking</a></li></ol></li><li class="expanded "><a href="chapter_3_2.html"><strong aria-hidden="true">3.2.</strong> Microservices</a></li><li><ol class="section"><li class="expanded "><a href="chapter_3_2_1.html"><strong aria-hidden="true">3.2.1.</strong> peach-buttons</a></li><li class="expanded "><a href="chapter_3_2_2.html" class="active"><strong aria-hidden="true">3.2.2.</strong> peach-menu</a></li><li class="expanded "><a href="chapter_3_2_3.html"><strong aria-hidden="true">3.2.3.</strong> peach-network</a></li><li class="expanded "><a href="chapter_3_2_4.html"><strong aria-hidden="true">3.2.4.</strong> peach-oled</a></li><li class="expanded "><a href="chapter_3_2_5.html"><strong aria-hidden="true">3.2.5.</strong> peach-stats</a></li></ol></li><li class="expanded "><a href="chapter_3_3.html"><strong aria-hidden="true">3.3.</strong> Web Interface</a></li><li class="expanded "><a href="chapter_3_4.html"><strong aria-hidden="true">3.4.</strong> Configuration</a></li></ol></li><li class="expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> Contributor's Guide</a></li><li class="expanded "><a href="chapter_5.html"><strong aria-hidden="true">5.</strong> Licensing</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">PeachCloud: Developer Documentation</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#peach-menu" id="peach-menu">peach-menu</a></h1>
+<p><a href="https://travis-ci.com/peachcloud/peach-menu"><img src="https://travis-ci.com/peachcloud/peach-menu.svg?branch=master" alt="Build Status" /></a></p>
+<p>OLED menu microservice module for PeachCloud. A state machine which listens for GPIO events (button presses) by subscribing to <code>peach-buttons</code> over websockets and makes <a href="https://www.jsonrpc.org/specification">JSON-RPC</a> calls to relevant PeachCloud microservices (<code>peach-network</code>, <code>peach-oled</code>, <code>peach-stats</code>).</p>
+<p><em>Note: This module is a work-in-progress.</em></p>
+<h3><a class="header" href="#directory-tree" id="directory-tree">Directory Tree</a></h3>
+<pre><code>.
+├── Cargo.lock
+├── Cargo.toml
+├── README.md
+├── src
+│   ├── buttons.rs          // JSON-RPC WebSocket client for peach-buttons
+│   ├── error.rs            // custom MenuError type &amp; From implementations
+│   ├── lib.rs              // launch state machine &amp; RPC client for buttons
+│   ├── main.rs             // init logger, call run() &amp; catch application errors
+│   ├── network.rs          // JSON-RPC HTTP client for peach-network
+│   ├── oled.rs             // JSON-RPC HTTP client for peach-oled
+│   ├── state_machine.rs    // state machine &amp; state_changer()
+│   ├── states.rs           // state-specific logic called by state machine
+│   ├── stats.rs            // JSON-RPC HTTP client for peach-stats
+│   └── structs.rs          // data types used by RPC clients
+</code></pre>
+<h3><a class="header" href="#button-code-mappings" id="button-code-mappings">Button Code Mappings</a></h3>
+<pre><code>0 =&gt; Center,  
+1 =&gt; Left,  
+2 =&gt; Right,  
+3 =&gt; Up,  
+4 =&gt; Down,  
+5 =&gt; A,  
+6 =&gt; B
+</code></pre>
+<h3><a class="header" href="#states" id="states">States</a></h3>
+<pre><code>Home(0), // home menu
+Home(1), // networking selected
+Home(2), // system stats selected
+Home(3), // display off selected
+Home(4), // shutdown selected 
+Logo, // logo splash screen
+Network, // network device view
+NetworkConf(0), // network configuration menu
+NetworkConf(1), // client mode selected
+NetworkConf(2), // access point mode selected
+NetworkMode(0), // client mode activated
+NetworkMode(1), // access point mode activated
+OledPower(0), // oled display off
+OledPower(1), // oled display on
+Shutdown, // shutting down
+Stats, // system statistics view
+</code></pre>
+<h3><a class="header" href="#setup" id="setup">Setup</a></h3>
+<p>Clone this repo:</p>
+<p><code>git clone https://github.com/peachcloud/peach-menu.git</code></p>
+<p>Move into the repo and compile:</p>
+<p><code>cd peach-menu</code><br />
+<code>cargo build --release</code></p>
+<p>Run the binary:</p>
+<p><code>./target/target/peach-menu</code></p>
+<p><em>Note: Will currently panic if <code>peach_buttons</code> is not running (connection to ws server fails).</em></p>
+<h3><a class="header" href="#environment" id="environment">Environment</a></h3>
+<p>The JSON-RPC HTTP server address and port for the OLED microservice can be configured with the <code>PEACH_OLED_SERVER</code> environment variable:</p>
+<p><code>export PEACH_OLED_SERVER=127.0.0.1:5000</code></p>
+<p>When not set, the value defaults to <code>127.0.0.1:5112</code>.</p>
+<p>Logging is made available with <code>env_logger</code>:</p>
+<p><code>export RUST_LOG=info</code></p>
+<p>Other logging levels include <code>debug</code>, <code>warn</code> and <code>error</code>.</p>
+<h3><a class="header" href="#resources" id="resources">Resources</a></h3>
+<p>This work was made much, much easier by the awesome blog post titled <a href="https://hoverbear.org/2016/10/12/rust-state-machine-pattern/">Pretty State Machine Patterns in Rust</a> by <a href="https://hoverbear.org/about/">hoverbear</a>. Thanks hoverbear!</p>
+<h3><a class="header" href="#licensing" id="licensing">Licensing</a></h3>
+<p>AGPL-3.0</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="chapter_3_2_1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="chapter_3_2_3.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="chapter_3_2_1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="chapter_3_2_3.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
